@@ -1,8 +1,14 @@
 export default function GameCard() {
   return (
-    <div className="test-border">
-      <img src="" alt="" width="400" height="300" className="bg-slate-300" />
-      <button type="button">Game Title</button>
+    <div className="test-border flex w-full flex-1 flex-col items-center gap-2">
+      {/* <img src="" alt="" className="bg-slate-300" /> */}
+      <p className="text-lg">Game Title</p>
+      <button
+        type="button"
+        className="rounded bg-teal-600 px-3 py-1 text-white"
+      >
+        Start
+      </button>
     </div>
   );
 }
