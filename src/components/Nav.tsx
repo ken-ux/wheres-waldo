@@ -1,16 +1,18 @@
+import { Link } from "react-router-dom";
+
 export default function Nav() {
   return (
     <nav className="bg-blue-200 p-4">
       <ul className="test-border m-auto flex max-w-screen-xl justify-between">
         <li>
-          <a href="/" className="text-xl font-bold">
+          <Link to="/" className="text-xl font-bold">
             Where's Waldo?
-          </a>
+          </Link>
         </li>
         <li>
-          <a href="/">
+          <Link to="/">
             <p>Leaderboards</p>
-          </a>
+          </Link>
         </li>
       </ul>
     </nav>
