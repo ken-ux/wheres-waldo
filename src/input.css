@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  #root {
+    @apply flex;
+    @apply flex-col;
+    @apply min-h-screen;
+  }
+}
+
 @layer components {
   .test-border {
     border: 1px solid red;
