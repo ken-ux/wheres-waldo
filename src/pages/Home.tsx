@@ -1,6 +1,6 @@
 import GameCard from "../components/GameCard";
 
-export default function SelectPage() {
+export default function Home() {
   return (
     <div className="test-border m-auto flex w-full max-w-screen-xl flex-col items-center">
       <h1 className="mb-8 text-3xl font-semibold">Choose a Game</h1>
