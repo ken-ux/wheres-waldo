@@ -9,7 +9,7 @@ export default function GameCard() {
         to="/instructions"
         className="rounded bg-teal-600 px-3 py-1 text-white"
       >
-        Start
+        Select
       </Link>
     </div>
   );
