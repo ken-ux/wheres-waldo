@@ -8,6 +8,14 @@
     @apply flex-col;
     @apply min-h-screen;
   }
+
+  a {
+    transition: all 0.1s ease-out;
+  }
+
+  a:hover {
+    opacity: 70%;
+  }
 }
 
 @layer components {
