@@ -13,7 +13,7 @@ export default function Instructions() {
         <GoalCard />
       </div>
       <Link
-        to="/"
+        to="/game"
         className="rounded bg-teal-600 px-3 py-1 text-2xl text-white"
       >
         Start
