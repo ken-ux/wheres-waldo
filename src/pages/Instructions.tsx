@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import GoalCard from "../components/GoalCard";
 
 export default function Instructions() {
@@ -11,6 +12,12 @@ export default function Instructions() {
         <GoalCard />
         <GoalCard />
       </div>
+      <Link
+        to="/"
+        className="rounded bg-teal-600 px-3 py-1 text-2xl text-white"
+      >
+        Start
+      </Link>
     </div>
   );
 }
