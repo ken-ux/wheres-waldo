@@ -10,8 +10,8 @@ export default function Nav() {
           </Link>
         </li>
         <li>
-          <Link to="/">
-            <p>Leaderboards</p>
+          <Link to="/leaderboard">
+            <p>Leaderboard</p>
           </Link>
         </li>
       </ul>
