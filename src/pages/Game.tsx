@@ -20,15 +20,24 @@ export default function Game() {
       break;
   }
 
+  const clickHandler = (e: React.MouseEvent<HTMLImageElement, MouseEvent>) => {
+    console.log(e.clientX, e.clientY);
+  };
+
   return (
     <div>
-      <div className="flex items-center justify-center gap-4">
+      <div className="mb-4 flex items-center justify-center gap-4">
         <h1 className="text-2xl">Find:</h1>
         <div className="flex">
           <GoalCards difficulty={difficulty} />
         </div>
       </div>
-      <img src={img_source} alt="" />
+      <img
+        src={img_source}
+        alt="game screen"
+        onClick={clickHandler}
+        className="w-full max-w-screen-xl"
+      />
     </div>
   );
 }
