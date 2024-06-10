@@ -47,13 +47,13 @@ export default function Instructions() {
       <h1 className="text-3xl font-semibold">
         You need to find these three characters or objects:
       </h1>
-      <div className="flex gap-2">
+      <div className="flex w-full flex-col gap-2 sm:flex-row">
         <GoalCard image={img_src_1} title={title_1} />
         <GoalCard image={img_src_2} title={title_2} />
         <GoalCard image={img_src_3} title={title_3} />
       </div>
       <Link
-        to="/game"
+        to={`/game/${difficulty}`}
         className="rounded bg-teal-600 px-3 py-1 text-2xl text-white"
       >
         Start

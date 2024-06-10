@@ -6,8 +6,8 @@ export default function GoalCard({
   title: string | undefined;
 }) {
   return (
-    <div className="test-border">
-      <img src={image} alt="" />
+    <div className="test-border flex flex-1 flex-col gap-4 text-center">
+      <img src={image} alt={title} className="aspect-square w-full" />
       <p>{title}</p>
     </div>
   );
