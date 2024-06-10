@@ -12,7 +12,7 @@ const routes = [
     children: [
       { index: true, element: <Home /> },
       { path: "instructions/:difficulty", element: <Instructions /> },
-      { path: "game", element: <Game /> },
+      { path: "game/:difficulty", element: <Game /> },
       { path: "leaderboard", element: <Leaderboard /> },
     ],
     errorElement: <ErrorPage />,
