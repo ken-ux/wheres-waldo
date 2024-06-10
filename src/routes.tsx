@@ -11,7 +11,7 @@ const routes = [
     element: <App />,
     children: [
       { index: true, element: <Home /> },
-      { path: "instructions", element: <Instructions /> },
+      { path: "instructions/:difficulty", element: <Instructions /> },
       { path: "game", element: <Game /> },
       { path: "leaderboard", element: <Leaderboard /> },
     ],

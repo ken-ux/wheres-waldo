@@ -30,7 +30,7 @@ export default function GameCard({
       />
       <p className="text-lg">Game Title</p>
       <Link
-        to="/instructions"
+        to={`/instructions/${difficulty}`}
         className="rounded bg-teal-600 px-3 py-1 text-white"
       >
         Select

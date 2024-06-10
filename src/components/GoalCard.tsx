@@ -1,8 +1,14 @@
-export default function GoalCard() {
+export default function GoalCard({
+  image,
+  title,
+}: {
+  image: string | undefined;
+  title: string | undefined;
+}) {
   return (
     <div className="test-border">
-      <div>img goes here</div>
-      <p>Name</p>
+      <img src={image} alt="" />
+      <p>{title}</p>
     </div>
   );
 }
