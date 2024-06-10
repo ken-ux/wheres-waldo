@@ -5,9 +5,9 @@ export default function Home() {
     <div className="test-border m-auto flex w-full max-w-screen-xl flex-col items-center gap-8">
       <h1 className="text-3xl font-semibold">Choose a Game</h1>
       <div className="flex w-full flex-col flex-wrap justify-center gap-4 md:flex-row">
-        <GameCard />
-        <GameCard />
-        <GameCard />
+        <GameCard difficulty="easy" />
+        <GameCard difficulty="medium" />
+        <GameCard difficulty="hard" />
       </div>
     </div>
   );
