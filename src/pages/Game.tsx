@@ -26,10 +26,15 @@ export default function Game() {
 
   return (
     <div>
-      <div className="mb-4 flex items-center justify-center gap-4">
-        <h1 className="text-2xl">Find:</h1>
-        <div className="flex">
-          <GoalCards difficulty={difficulty} />
+      <div className="mb-4 flex items-center justify-between">
+        <div className="flex items-center gap-4">
+          <h1 className="text-2xl">Find:</h1>
+          <div className="flex">
+            <GoalCards difficulty={difficulty} />
+          </div>
+        </div>
+        <div>
+          <h1 className="text-2xl">Timer: 00:00:00</h1>
         </div>
       </div>
       <img
