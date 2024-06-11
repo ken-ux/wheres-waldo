@@ -8,6 +8,9 @@ import waldo_hard from "../assets/waldo_beach.jpg";
 
 export default function Game() {
   const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [imageRatio, setImageRatio] = useState(1.0);
+  const [tooltipOpen, setTooltipOpen] = useState(false);
+
   const { difficulty } = useParams();
   let img_source;
 
@@ -28,15 +31,21 @@ export default function Game() {
     // of the website (1280px) to get a ratio that we can convert the coordinates by.
     const image: HTMLImageElement | null =
       document.querySelector("#game_screen");
-    const ratio = image ? 1280 / image.width : 1.0;
+    if (image !== null) {
+      setImageRatio(1280 / image.width);
+    }
 
     // The dimensions of the click event are the same at any screen size after multiplying by the ratio.
     const dimensions = {
-      x: e.nativeEvent.offsetX * ratio,
-      y: e.nativeEvent.offsetY * ratio,
+      x: e.nativeEvent.offsetX * imageRatio,
+      y: e.nativeEvent.offsetY * imageRatio,
     };
+
+    // Record the cursor position so that the tooltip is rendered in the correct place.
     setPosition({ x: e.nativeEvent.offsetX, y: e.nativeEvent.offsetY });
     console.log(dimensions.x, dimensions.y);
+
+    setTooltipOpen(!tooltipOpen);
   };
 
   return (
@@ -60,7 +69,9 @@ export default function Game() {
           onClick={clickHandler}
           className="w-full max-w-screen-xl"
         />
-        <Tooltip position={position} />
+        {tooltipOpen && (
+          <Tooltip position={position} cursorRatio={imageRatio} />
+        )}
       </div>
     </div>
   );
