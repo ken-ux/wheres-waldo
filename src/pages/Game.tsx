@@ -1,10 +1,13 @@
+import { useState } from "react";
 import { useParams } from "react-router-dom";
+import Tooltip from "../components/Tooltip";
 import GoalCards from "../components/GoalCards";
 import waldo_easy from "../assets/waldo_city.jpeg";
 import waldo_medium from "../assets/waldo_winter.jpeg";
 import waldo_hard from "../assets/waldo_beach.jpg";
 
 export default function Game() {
+  const [position, setPosition] = useState({ x: 0, y: 0 });
   const { difficulty } = useParams();
   let img_source;
 
@@ -32,6 +35,7 @@ export default function Game() {
       x: e.nativeEvent.offsetX * ratio,
       y: e.nativeEvent.offsetY * ratio,
     };
+    setPosition({ x: e.nativeEvent.offsetX, y: e.nativeEvent.offsetY });
     console.log(dimensions.x, dimensions.y);
   };
 
@@ -53,8 +57,9 @@ export default function Game() {
         src={img_source}
         alt="game screen"
         onClick={clickHandler}
-        className="w-full max-w-screen-xl"
+        className="relative w-full max-w-screen-xl"
       />
+      <Tooltip position={position} />
     </div>
   );
 }
