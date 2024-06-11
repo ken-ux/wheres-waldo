@@ -4,7 +4,7 @@ export default function Tooltip({
   position: { x: number; y: number };
 }) {
   return (
-    <div className="absolute">
+    <div className="absolute" style={{ left: position.x, top: position.y }}>
       {position.x}, {position.y}
     </div>
   );
