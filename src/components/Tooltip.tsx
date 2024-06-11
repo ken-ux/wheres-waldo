@@ -1,3 +1,5 @@
+import Dropdown from "./Dropdown";
+
 export default function Tooltip({
   position,
   cursorRatio,
@@ -15,15 +17,16 @@ export default function Tooltip({
 
   return (
     <div
-      className="absolute"
+      className="absolute flex flex-col"
       style={{ left: centeredPositionX, top: centeredPositionY }}
     >
       <div
-        className="rounded-full bg-slate-200"
+        className="rounded-full border-4 border-dashed border-slate-500 bg-slate-500/40"
         style={{ height: cursorSize, width: cursorSize }}
       >
         {position.x}, {position.y}
       </div>
+      <Dropdown />
     </div>
   );
 }
