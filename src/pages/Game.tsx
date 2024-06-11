@@ -21,7 +21,18 @@ export default function Game() {
   }
 
   const clickHandler = (e: React.MouseEvent<HTMLImageElement, MouseEvent>) => {
-    console.log(e.clientX, e.clientY);
+    // If image is resized smaller, check the current image size. Divide by the max-width
+    // of the website (1280px) to get a ratio that we can convert the coordinates by.
+    const image: HTMLImageElement | null =
+      document.querySelector("#game_screen");
+    const ratio = image ? 1280 / image.width : 1.0;
+
+    // The dimensions of the click event are the same at any screen size after multiplying by the ratio.
+    const dimensions = {
+      x: e.nativeEvent.offsetX * ratio,
+      y: e.nativeEvent.offsetY * ratio,
+    };
+    console.log(dimensions.x, dimensions.y);
   };
 
   return (
@@ -38,6 +49,7 @@ export default function Game() {
         </div>
       </div>
       <img
+        id="game_screen"
         src={img_source}
         alt="game screen"
         onClick={clickHandler}
