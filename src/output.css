@@ -572,16 +572,24 @@ a:hover {
   border: 1px solid red;
 }
 
-.fixed {
-  position: fixed;
-}
-
 .absolute {
   position: absolute;
 }
 
 .relative {
   position: relative;
+}
+
+.top-0 {
+  top: 0px;
+}
+
+.top-\[50\] {
+  top: 50;
+}
+
+.top-\[50px\] {
+  top: 50px;
 }
 
 .m-auto {

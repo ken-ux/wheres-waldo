@@ -52,14 +52,16 @@ export default function Game() {
           <h1 className="text-2xl">Timer: 00:00:00</h1>
         </div>
       </div>
-      <img
-        id="game_screen"
-        src={img_source}
-        alt="game screen"
-        onClick={clickHandler}
-        className="relative w-full max-w-screen-xl"
-      />
-      <Tooltip position={position} />
+      <div className="relative">
+        <img
+          id="game_screen"
+          src={img_source}
+          alt="game screen"
+          onClick={clickHandler}
+          className="w-full max-w-screen-xl"
+        />
+        <Tooltip position={position} />
+      </div>
     </div>
   );
 }
