@@ -10,7 +10,11 @@ import hard_goal_1 from "../assets/hard_goal_1.png";
 import hard_goal_2 from "../assets/hard_goal_2.png";
 import hard_goal_3 from "../assets/hard_goal_3.png";
 
-export default function GoalCardGroup() {
+export default function GoalCardGroup({
+  tooltipMode,
+}: {
+  tooltipMode: boolean;
+}) {
   const { difficulty } = useParams();
   let img_src_1, img_src_2, img_src_3;
   let title_1, title_2, title_3;
@@ -40,11 +44,13 @@ export default function GoalCardGroup() {
       title_2 = "Waldo";
       title_3 = "Man with Camera";
   }
-  return (
+  return !tooltipMode ? (
     <>
       <GoalCard image={img_src_1} title={title_1} />
       <GoalCard image={img_src_2} title={title_2} />
       <GoalCard image={img_src_3} title={title_3} />
     </>
+  ) : (
+    <div>Different Goal Cards Go Here</div>
   );
 }

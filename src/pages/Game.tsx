@@ -54,7 +54,7 @@ export default function Game() {
         <div className="flex items-center gap-4">
           <h1 className="text-2xl">Find:</h1>
           <div className="flex">
-            <GoalCardGroup />
+            <GoalCardGroup tooltipMode={false} />
           </div>
         </div>
         <div>

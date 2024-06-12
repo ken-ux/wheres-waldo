@@ -1,4 +1,4 @@
-import Dropdown from "./Dropdown";
+import GoalCardGroup from "./GoalCardGroup";
 
 export default function Tooltip({
   position,
@@ -23,10 +23,8 @@ export default function Tooltip({
       <div
         className="rounded-full border-4 border-dashed border-slate-500 bg-slate-500/40"
         style={{ height: cursorSize, width: cursorSize }}
-      >
-        {position.x}, {position.y}
-      </div>
-      <Dropdown />
+      />
+      <GoalCardGroup tooltipMode={true} />
     </div>
   );
 }
