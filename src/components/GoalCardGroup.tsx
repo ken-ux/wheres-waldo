@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import GoalCard from "./GoalCard";
+import DropdownTarget from "./DropdownTarget";
 import easy_goal_1 from "../assets/easy_goal_1.png";
 import easy_goal_2 from "../assets/easy_goal_2.png";
 import easy_goal_3 from "../assets/easy_goal_3.png";
@@ -51,6 +52,10 @@ export default function GoalCardGroup({
       <GoalCard image={img_src_3} title={title_3} />
     </>
   ) : (
-    <div>Different Goal Cards Go Here</div>
+    <>
+      <DropdownTarget image={img_src_1} title={title_1} />
+      <DropdownTarget image={img_src_2} title={title_2} />
+      <DropdownTarget image={img_src_3} title={title_3} />
+    </>
   );
 }
