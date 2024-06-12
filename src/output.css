@@ -618,14 +618,6 @@ a:hover {
   height: 2rem;
 }
 
-.h-5 {
-  height: 1.25rem;
-}
-
-.h-10 {
-  height: 2.5rem;
-}
-
 .w-24 {
   width: 6rem;
 }
@@ -636,14 +628,6 @@ a:hover {
 
 .w-full {
   width: 100%;
-}
-
-.w-5 {
-  width: 1.25rem;
-}
-
-.w-10 {
-  width: 2.5rem;
 }
 
 .max-w-screen-xl {
@@ -694,10 +678,6 @@ a:hover {
   border-radius: 9999px;
 }
 
-.border {
-  border-width: 1px;
-}
-
 .border-4 {
   border-width: 4px;
 }
@@ -721,6 +701,10 @@ a:hover {
   background-color: rgb(254 202 202 / var(--tw-bg-opacity));
 }
 
+.bg-slate-500\/40 {
+  background-color: rgb(100 116 139 / 0.4);
+}
+
 .bg-teal-600 {
   --tw-bg-opacity: 1;
   background-color: rgb(13 148 136 / var(--tw-bg-opacity));
@@ -729,32 +713,6 @@ a:hover {
 .bg-yellow-200 {
   --tw-bg-opacity: 1;
   background-color: rgb(254 240 138 / var(--tw-bg-opacity));
-}
-
-.bg-slate-200 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(226 232 240 / var(--tw-bg-opacity));
-}
-
-.bg-slate-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(100 116 139 / var(--tw-bg-opacity));
-}
-
-.bg-slate-500\/50 {
-  background-color: rgb(100 116 139 / 0.5);
-}
-
-.bg-slate-500\/70 {
-  background-color: rgb(100 116 139 / 0.7);
-}
-
-.bg-slate-500\/20 {
-  background-color: rgb(100 116 139 / 0.2);
-}
-
-.bg-slate-500\/40 {
-  background-color: rgb(100 116 139 / 0.4);
 }
 
 .object-cover {

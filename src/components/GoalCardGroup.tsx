@@ -1,3 +1,4 @@
+import { useParams } from "react-router-dom";
 import GoalCard from "./GoalCard";
 import easy_goal_1 from "../assets/easy_goal_1.png";
 import easy_goal_2 from "../assets/easy_goal_2.png";
@@ -9,11 +10,8 @@ import hard_goal_1 from "../assets/hard_goal_1.png";
 import hard_goal_2 from "../assets/hard_goal_2.png";
 import hard_goal_3 from "../assets/hard_goal_3.png";
 
-export default function GoalCardGroup({
-  difficulty,
-}: {
-  difficulty: string | undefined;
-}) {
+export default function GoalCardGroup() {
+  const { difficulty } = useParams();
   let img_src_1, img_src_2, img_src_3;
   let title_1, title_2, title_3;
 
