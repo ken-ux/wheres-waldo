@@ -4,10 +4,16 @@ export default function Tooltip({
   position,
   cursorRatio,
   setTooltipOpen,
+  goalsCompleted,
+  setGoalsCompleted,
 }: {
   position: { x: number; y: number };
   cursorRatio: number;
   setTooltipOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  goalsCompleted: { 1: boolean; 2: boolean; 3: boolean };
+  setGoalsCompleted: React.Dispatch<
+    React.SetStateAction<{ 1: boolean; 2: boolean; 3: boolean }>
+  >;
 }) {
   // Scale the cursor size with the image.
   const cursorSize = 50 / cursorRatio;
@@ -26,7 +32,12 @@ export default function Tooltip({
         className="rounded-full border-4 border-dashed border-slate-500 bg-slate-500/40"
         style={{ height: cursorSize, width: cursorSize }}
       />
-      <GoalCardGroup tooltipMode={true} setTooltipOpen={setTooltipOpen} />
+      <GoalCardGroup
+        tooltipMode={true}
+        setTooltipOpen={setTooltipOpen}
+        goalsCompleted={goalsCompleted}
+        setGoalsCompleted={setGoalsCompleted}
+      />
     </div>
   );
 }

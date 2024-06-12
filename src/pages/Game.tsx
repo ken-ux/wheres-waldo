@@ -7,6 +7,11 @@ import waldo_medium from "../assets/waldo_winter.jpeg";
 import waldo_hard from "../assets/waldo_beach.jpg";
 
 export default function Game() {
+  const [goalsCompleted, setGoalsCompleted] = useState({
+    1: false,
+    2: false,
+    3: false,
+  });
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [imageRatio, setImageRatio] = useState(1.0);
   const [tooltipOpen, setTooltipOpen] = useState(false);
@@ -74,6 +79,8 @@ export default function Game() {
             position={position}
             cursorRatio={imageRatio}
             setTooltipOpen={setTooltipOpen}
+            goalsCompleted={goalsCompleted}
+            setGoalsCompleted={setGoalsCompleted}
           />
         )}
       </div>
