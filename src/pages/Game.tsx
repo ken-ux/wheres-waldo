@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useParams } from "react-router-dom";
 import Tooltip from "../components/Tooltip";
-import GoalCards from "../components/GoalCards";
+import GoalCardGroup from "../components/GoalCardGroup";
 import waldo_easy from "../assets/waldo_city.jpeg";
 import waldo_medium from "../assets/waldo_winter.jpeg";
 import waldo_hard from "../assets/waldo_beach.jpg";
@@ -54,7 +54,7 @@ export default function Game() {
         <div className="flex items-center gap-4">
           <h1 className="text-2xl">Find:</h1>
           <div className="flex">
-            <GoalCards difficulty={difficulty} />
+            <GoalCardGroup difficulty={difficulty} />
           </div>
         </div>
         <div>

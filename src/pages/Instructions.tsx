@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
-import GoalCards from "../components/GoalCards";
+import GoalCardGroup from "../components/GoalCardGroup";
 
 export default function Instructions() {
   const { difficulty } = useParams();
@@ -11,7 +11,7 @@ export default function Instructions() {
         You need to find these three characters or objects:
       </h1>
       <div className="flex w-full flex-col gap-2 sm:flex-row">
-        <GoalCards difficulty={difficulty} />
+        <GoalCardGroup difficulty={difficulty} />
       </div>
       <Link
         to={`/game/${difficulty}`}

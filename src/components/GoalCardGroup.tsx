@@ -1,4 +1,4 @@
-import GoalCard from "../components/GoalCard";
+import GoalCard from "./GoalCard";
 import easy_goal_1 from "../assets/easy_goal_1.png";
 import easy_goal_2 from "../assets/easy_goal_2.png";
 import easy_goal_3 from "../assets/easy_goal_3.png";
@@ -9,7 +9,7 @@ import hard_goal_1 from "../assets/hard_goal_1.png";
 import hard_goal_2 from "../assets/hard_goal_2.png";
 import hard_goal_3 from "../assets/hard_goal_3.png";
 
-export default function GoalCards({
+export default function GoalCardGroup({
   difficulty,
 }: {
   difficulty: string | undefined;
