@@ -610,12 +610,20 @@ a:hover {
   aspect-ratio: 16 / 9;
 }
 
+.h-16 {
+  height: 4rem;
+}
+
 .h-24 {
   height: 6rem;
 }
 
 .h-8 {
   height: 2rem;
+}
+
+.w-16 {
+  width: 4rem;
 }
 
 .w-24 {
@@ -701,6 +709,11 @@ a:hover {
   background-color: rgb(254 202 202 / var(--tw-bg-opacity));
 }
 
+.bg-slate-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(241 245 249 / var(--tw-bg-opacity));
+}
+
 .bg-slate-500\/40 {
   background-color: rgb(100 116 139 / 0.4);
 }
@@ -779,6 +792,11 @@ a:hover {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.hover\:bg-slate-500:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(100 116 139 / var(--tw-bg-opacity));
 }
 
 @media (min-width: 640px) {

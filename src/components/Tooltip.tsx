@@ -3,9 +3,11 @@ import GoalCardGroup from "./GoalCardGroup";
 export default function Tooltip({
   position,
   cursorRatio,
+  setTooltipOpen,
 }: {
   position: { x: number; y: number };
   cursorRatio: number;
+  setTooltipOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }) {
   // Scale the cursor size with the image.
   const cursorSize = 50 / cursorRatio;
@@ -24,7 +26,7 @@ export default function Tooltip({
         className="rounded-full border-4 border-dashed border-slate-500 bg-slate-500/40"
         style={{ height: cursorSize, width: cursorSize }}
       />
-      <GoalCardGroup tooltipMode={true} />
+      <GoalCardGroup tooltipMode={true} setTooltipOpen={setTooltipOpen} />
     </div>
   );
 }

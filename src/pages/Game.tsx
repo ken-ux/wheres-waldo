@@ -70,7 +70,11 @@ export default function Game() {
           className="w-full max-w-screen-xl"
         />
         {tooltipOpen && (
-          <Tooltip position={position} cursorRatio={imageRatio} />
+          <Tooltip
+            position={position}
+            cursorRatio={imageRatio}
+            setTooltipOpen={setTooltipOpen}
+          />
         )}
       </div>
     </div>

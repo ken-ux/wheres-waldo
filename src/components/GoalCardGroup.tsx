@@ -13,8 +13,10 @@ import hard_goal_3 from "../assets/hard_goal_3.png";
 
 export default function GoalCardGroup({
   tooltipMode,
+  setTooltipOpen,
 }: {
   tooltipMode: boolean;
+  setTooltipOpen?: React.Dispatch<React.SetStateAction<boolean>>;
 }) {
   const { difficulty } = useParams();
   let img_src_1, img_src_2, img_src_3;
@@ -53,9 +55,21 @@ export default function GoalCardGroup({
     </>
   ) : (
     <>
-      <DropdownTarget image={img_src_1} title={title_1} />
-      <DropdownTarget image={img_src_2} title={title_2} />
-      <DropdownTarget image={img_src_3} title={title_3} />
+      <DropdownTarget
+        image={img_src_1}
+        title={title_1}
+        setTooltipOpen={setTooltipOpen}
+      />
+      <DropdownTarget
+        image={img_src_2}
+        title={title_2}
+        setTooltipOpen={setTooltipOpen}
+      />
+      <DropdownTarget
+        image={img_src_3}
+        title={title_3}
+        setTooltipOpen={setTooltipOpen}
+      />
     </>
   );
 }
