@@ -17,6 +17,8 @@ export default function DropdownTarget({
       >
     | undefined;
 }) {
+  let disabled = false;
+
   const clickHandler = () => {
     if (setTooltipOpen) {
       setTooltipOpen(false);
@@ -29,10 +31,17 @@ export default function DropdownTarget({
     console.log(goalsCompleted);
   };
 
+  if (goalsCompleted !== undefined && goalsCompleted[id] === true) {
+    disabled = true;
+  }
+
   return (
     <div
-      className="test-border flex items-center bg-slate-100 hover:bg-slate-500"
-      onClick={clickHandler}
+      className={
+        "test-border flex items-center " +
+        (disabled ? "bg-red-200" : "bg-slate-100 hover:bg-slate-500")
+      }
+      onClick={disabled ? undefined : clickHandler}
     >
       <img src={image} alt={title} className="h-16 w-16" />
       <p className="p-4">{title}</p>
