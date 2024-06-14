@@ -28,7 +28,7 @@ export default function GoalCard({
     <div
       className={
         game_screen
-          ? "test-border flex flex-1 items-center gap-2 bg-slate-50" +
+          ? "test-border flex flex-1 items-center gap-2 bg-slate-50 " +
             (completed ? "text-lg" : "")
           : "test-border flex flex-1 flex-col gap-4 text-center"
       }
