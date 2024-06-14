@@ -55,9 +55,24 @@ export default function GoalCardGroup({
   }
   return !tooltipMode ? (
     <>
-      <GoalCard image={img_src_1} title={title_1} />
-      <GoalCard image={img_src_2} title={title_2} />
-      <GoalCard image={img_src_3} title={title_3} />
+      <GoalCard
+        id={1}
+        goalsCompleted={goalsCompleted}
+        image={img_src_1}
+        title={title_1}
+      />
+      <GoalCard
+        id={2}
+        goalsCompleted={goalsCompleted}
+        image={img_src_2}
+        title={title_2}
+      />
+      <GoalCard
+        id={3}
+        goalsCompleted={goalsCompleted}
+        image={img_src_3}
+        title={title_3}
+      />
     </>
   ) : (
     <>

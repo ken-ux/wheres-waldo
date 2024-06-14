@@ -2,9 +2,13 @@
 import { useLocation } from "react-router-dom";
 
 export default function GoalCard({
+  id,
+  goalsCompleted,
   image,
   title,
 }: {
+  id?: 1 | 2 | 3;
+  goalsCompleted?: { 1: boolean; 2: boolean; 3: boolean };
   image: string | undefined;
   title: string | undefined;
 }) {
@@ -15,11 +19,17 @@ export default function GoalCard({
     game_screen = true;
   }
 
+  let completed = false;
+  if (id && goalsCompleted) {
+    completed = goalsCompleted[id];
+  }
+
   return (
     <div
       className={
         game_screen
-          ? "test-border flex flex-1 items-center gap-2"
+          ? "test-border flex flex-1 items-center gap-2 bg-slate-50" +
+            (completed ? "text-lg" : "")
           : "test-border flex flex-1 flex-col gap-4 text-center"
       }
     >
