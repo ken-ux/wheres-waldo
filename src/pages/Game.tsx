@@ -67,7 +67,7 @@ export default function Game() {
             />
           </div>
         </div>
-        <Timer />
+        <Timer gameOver={gameOver} />
       </div>
       <div className="relative">
         <div className="flex items-center justify-center">
