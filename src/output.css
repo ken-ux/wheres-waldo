@@ -727,6 +727,10 @@ a:hover {
   background-color: rgb(100 116 139 / 0.4);
 }
 
+.bg-slate-800\/90 {
+  background-color: rgb(30 41 59 / 0.9);
+}
+
 .bg-teal-600 {
   --tw-bg-opacity: 1;
   background-color: rgb(13 148 136 / var(--tw-bg-opacity));
@@ -735,42 +739,6 @@ a:hover {
 .bg-yellow-200 {
   --tw-bg-opacity: 1;
   background-color: rgb(254 240 138 / var(--tw-bg-opacity));
-}
-
-.bg-slate-500\/50 {
-  background-color: rgb(100 116 139 / 0.5);
-}
-
-.bg-slate-500\/80 {
-  background-color: rgb(100 116 139 / 0.8);
-}
-
-.bg-slate-600\/80 {
-  background-color: rgb(71 85 105 / 0.8);
-}
-
-.bg-slate-600\/10 {
-  background-color: rgb(71 85 105 / 0.1);
-}
-
-.bg-slate-600\/50 {
-  background-color: rgb(71 85 105 / 0.5);
-}
-
-.bg-slate-600\/90 {
-  background-color: rgb(71 85 105 / 0.9);
-}
-
-.bg-slate-600\/100 {
-  background-color: rgb(71 85 105 / 1);
-}
-
-.bg-slate-700\/90 {
-  background-color: rgb(51 65 85 / 0.9);
-}
-
-.bg-slate-800\/90 {
-  background-color: rgb(30 41 59 / 0.9);
 }
 
 .object-cover {

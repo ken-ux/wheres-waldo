@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useParams } from "react-router-dom";
 import Tooltip from "../components/Tooltip";
 import GoalCardGroup from "../components/GoalCardGroup";
+import Timer from "../components/Timer";
 import waldo_easy from "../assets/waldo_city.jpeg";
 import waldo_medium from "../assets/waldo_winter.jpeg";
 import waldo_hard from "../assets/waldo_beach.jpg";
@@ -66,9 +67,7 @@ export default function Game() {
             />
           </div>
         </div>
-        <div>
-          <h1 className="text-2xl">Timer: 00:00:00</h1>
-        </div>
+        <Timer />
       </div>
       <div className="relative">
         <div className="flex items-center justify-center">
