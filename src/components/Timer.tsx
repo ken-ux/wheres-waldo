@@ -1,5 +1,11 @@
 import { useState, useEffect } from "react";
-export default function Timer({ gameOver }: { gameOver: boolean }) {
+export default function Timer({
+  gameOver,
+  setTime,
+}: {
+  gameOver: boolean;
+  setTime: React.Dispatch<React.SetStateAction<number>>;
+}) {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
@@ -8,8 +14,10 @@ export default function Timer({ gameOver }: { gameOver: boolean }) {
         setCount((c) => c + 1);
       }, 1000);
       return () => clearInterval(intervalId);
+    } else {
+      setTime(count);
     }
-  }, [gameOver]);
+  }, [gameOver, count, setTime]);
 
   return (
     <div>

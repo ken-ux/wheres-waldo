@@ -17,6 +17,7 @@ export default function Game() {
   const [imageRatio, setImageRatio] = useState(1.0);
   const [tooltipOpen, setTooltipOpen] = useState(false);
   const [gameOver, setGameOver] = useState(false);
+  const [time, setTime] = useState(0);
 
   const { difficulty } = useParams();
   let img_source;
@@ -67,7 +68,7 @@ export default function Game() {
             />
           </div>
         </div>
-        <Timer gameOver={gameOver} />
+        <Timer gameOver={gameOver} setTime={setTime} />
       </div>
       <div className="relative">
         <div className="flex items-center justify-center">
@@ -80,7 +81,7 @@ export default function Game() {
           />
           {gameOver && (
             <div className="absolute flex h-full w-full items-center justify-center bg-slate-800/90 text-white">
-              Game Over
+              Game Over, {time}
             </div>
           )}
         </div>
