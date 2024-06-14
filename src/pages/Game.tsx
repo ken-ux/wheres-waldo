@@ -71,13 +71,21 @@ export default function Game() {
         </div>
       </div>
       <div className="relative">
-        <img
-          id="game_screen"
-          src={img_source}
-          alt="game screen"
-          onClick={clickHandler}
-          className="w-full max-w-screen-xl"
-        />
+        <div className="flex items-center justify-center">
+          <img
+            id="game_screen"
+            src={img_source}
+            alt="game screen"
+            onClick={clickHandler}
+            className="w-full max-w-screen-xl"
+          />
+          {gameOver && (
+            <div className="absolute flex h-full w-full items-center justify-center bg-slate-800/90 text-white">
+              Game Over
+            </div>
+          )}
+        </div>
+
         {tooltipOpen && (
           <Tooltip
             position={position}
@@ -89,7 +97,6 @@ export default function Game() {
           />
         )}
       </div>
-      {gameOver && <div>Game Over</div>}
     </div>
   );
 }
