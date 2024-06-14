@@ -6,6 +6,7 @@ export default function Tooltip({
   setTooltipOpen,
   goalsCompleted,
   setGoalsCompleted,
+  setGameOver,
 }: {
   position: { x: number; y: number };
   cursorRatio: number;
@@ -14,6 +15,7 @@ export default function Tooltip({
   setGoalsCompleted: React.Dispatch<
     React.SetStateAction<{ 1: boolean; 2: boolean; 3: boolean }>
   >;
+  setGameOver: React.Dispatch<React.SetStateAction<boolean>>;
 }) {
   // Scale the cursor size with the image.
   const cursorSize = 50 / cursorRatio;
@@ -37,6 +39,7 @@ export default function Tooltip({
         setTooltipOpen={setTooltipOpen}
         goalsCompleted={goalsCompleted}
         setGoalsCompleted={setGoalsCompleted}
+        setGameOver={setGameOver}
       />
     </div>
   );

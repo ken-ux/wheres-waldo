@@ -15,6 +15,7 @@ export default function Game() {
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [imageRatio, setImageRatio] = useState(1.0);
   const [tooltipOpen, setTooltipOpen] = useState(false);
+  const [gameOver, setGameOver] = useState(false);
 
   const { difficulty } = useParams();
   let img_source;
@@ -84,9 +85,11 @@ export default function Game() {
             setTooltipOpen={setTooltipOpen}
             goalsCompleted={goalsCompleted}
             setGoalsCompleted={setGoalsCompleted}
+            setGameOver={setGameOver}
           />
         )}
       </div>
+      {gameOver && <div>Game Over</div>}
     </div>
   );
 }

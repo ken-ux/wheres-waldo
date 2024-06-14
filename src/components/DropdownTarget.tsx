@@ -5,6 +5,7 @@ export default function DropdownTarget({
   setTooltipOpen,
   goalsCompleted,
   setGoalsCompleted,
+  setGameOver,
 }: {
   id: 1 | 2 | 3;
   image: string | undefined;
@@ -16,6 +17,7 @@ export default function DropdownTarget({
         React.SetStateAction<{ 1: boolean; 2: boolean; 3: boolean }>
       >
     | undefined;
+  setGameOver: React.Dispatch<React.SetStateAction<boolean>> | undefined;
 }) {
   let disabled = false;
 
@@ -23,12 +25,18 @@ export default function DropdownTarget({
     if (setTooltipOpen) {
       setTooltipOpen(false);
     }
-    if (goalsCompleted !== undefined && setGoalsCompleted !== undefined) {
+    if (
+      goalsCompleted !== undefined &&
+      setGoalsCompleted !== undefined &&
+      setGameOver !== undefined
+    ) {
       const newGoalsCompleted = goalsCompleted;
       newGoalsCompleted[id] = true;
       setGoalsCompleted(newGoalsCompleted);
+      if (goalsCompleted[1] && goalsCompleted[2] && goalsCompleted[3]) {
+        setGameOver(true);
+      }
     }
-    console.log(goalsCompleted);
   };
 
   if (goalsCompleted !== undefined && goalsCompleted[id] === true) {

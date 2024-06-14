@@ -16,6 +16,7 @@ export default function GoalCardGroup({
   setTooltipOpen,
   goalsCompleted,
   setGoalsCompleted,
+  setGameOver,
 }: {
   tooltipMode: boolean;
   setTooltipOpen?: React.Dispatch<React.SetStateAction<boolean>>;
@@ -23,6 +24,7 @@ export default function GoalCardGroup({
   setGoalsCompleted?: React.Dispatch<
     React.SetStateAction<{ 1: boolean; 2: boolean; 3: boolean }>
   >;
+  setGameOver?: React.Dispatch<React.SetStateAction<boolean>>;
 }) {
   const { difficulty } = useParams();
   let img_src_1, img_src_2, img_src_3;
@@ -83,6 +85,7 @@ export default function GoalCardGroup({
         setTooltipOpen={setTooltipOpen}
         goalsCompleted={goalsCompleted}
         setGoalsCompleted={setGoalsCompleted}
+        setGameOver={setGameOver}
       />
       <DropdownTarget
         id={2}
@@ -91,6 +94,7 @@ export default function GoalCardGroup({
         setTooltipOpen={setTooltipOpen}
         goalsCompleted={goalsCompleted}
         setGoalsCompleted={setGoalsCompleted}
+        setGameOver={setGameOver}
       />
       <DropdownTarget
         id={3}
@@ -99,6 +103,7 @@ export default function GoalCardGroup({
         setTooltipOpen={setTooltipOpen}
         goalsCompleted={goalsCompleted}
         setGoalsCompleted={setGoalsCompleted}
+        setGameOver={setGameOver}
       />
     </>
   );
