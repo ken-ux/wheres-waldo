@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import Tooltip from "../components/Tooltip";
 import GoalCardGroup from "../components/GoalCardGroup";
 import Timer from "../components/Timer";
+import GameOver from "../components/GameOver";
 import waldo_easy from "../assets/waldo_city.jpeg";
 import waldo_medium from "../assets/waldo_winter.jpeg";
 import waldo_hard from "../assets/waldo_beach.jpg";
@@ -79,11 +80,7 @@ export default function Game() {
             onClick={clickHandler}
             className="w-full max-w-screen-xl"
           />
-          {gameOver && (
-            <div className="absolute flex h-full w-full items-center justify-center bg-slate-800/90 text-white">
-              Game Over, {time}
-            </div>
-          )}
+          {gameOver && <GameOver time={time} />}
         </div>
 
         {tooltipOpen && (
