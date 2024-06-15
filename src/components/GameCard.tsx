@@ -22,19 +22,21 @@ export default function GameCard({
   }
 
   return (
-    <div className="test-border flex w-full flex-1 flex-col items-center gap-2">
+    <div className="flex w-full flex-1 flex-col items-center rounded-lg border border-teal-600/50 shadow-lg transition duration-300 hover:scale-[1.01] hover:shadow-xl">
       <img
         src={img_src}
         alt={`${difficulty} game mode`}
-        className="aspect-video object-cover"
+        className="aspect-video rounded-t-lg object-cover"
       />
-      <p className="text-lg">Game Title</p>
-      <Link
-        to={`/instructions/${difficulty}`}
-        className="rounded bg-teal-600 px-3 py-1 text-white"
-      >
-        Select
-      </Link>
+      <div className="flex w-full flex-col items-center gap-2 rounded-b-lg border-t border-teal-600/50 bg-white p-4">
+        <p className="text-lg font-semibold capitalize">{difficulty}</p>
+        <Link
+          to={`/instructions/${difficulty}`}
+          className="rounded bg-teal-600 px-3 py-1 text-white"
+        >
+          Select
+        </Link>
+      </div>
     </div>
   );
 }
