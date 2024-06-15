@@ -59,8 +59,8 @@ export default function Game() {
 
   return (
     <div>
-      <div className="mb-4 flex items-center justify-between">
-        <div className="flex items-center gap-4">
+      <div className="mb-4 flex flex-wrap items-center justify-between gap-4">
+        <div className="flex flex-wrap items-center gap-4">
           <h1 className="text-2xl">Find:</h1>
           <div className="flex">
             <GoalCardGroup
