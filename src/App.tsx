@@ -6,7 +6,7 @@ function App() {
   return (
     <>
       <Nav />
-      <main className="flex flex-1 justify-center bg-red-200 px-4 py-12">
+      <main className="flex flex-1 justify-center bg-teal-50 px-4 py-12">
         <Outlet />
       </main>
       <Footer />
