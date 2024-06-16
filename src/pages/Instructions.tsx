@@ -8,14 +8,15 @@ export default function Instructions() {
   return (
     <div className="flex flex-col items-center justify-center gap-8">
       <h1 className="text-center text-2xl font-semibold md:text-3xl">
-        You need to find these three characters or objects:
+        You need to find these{" "}
+        <span className="text-teal-600">three characters</span>:
       </h1>
       <div className="flex w-full flex-col gap-2 sm:flex-row">
         <GoalCardGroup tooltipMode={false} />
       </div>
       <Link
         to={`/game/${difficulty}`}
-        className="rounded bg-teal-600 px-3 py-1 text-2xl text-white"
+        className="rounded bg-teal-600 px-6 py-2 text-2xl text-white"
       >
         Start
       </Link>
