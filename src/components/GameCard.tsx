@@ -28,7 +28,7 @@ export default function GameCard({
         alt={`${difficulty} game mode`}
         className="aspect-video rounded-t-lg object-cover"
       />
-      <div className="flex w-full flex-col items-center gap-2 rounded-b-lg border-t border-teal-600/50 bg-white p-4">
+      <div className="flex w-full flex-col items-center gap-4 rounded-b-lg border-t border-teal-600/50 bg-white p-4">
         <p className="text-lg font-semibold capitalize">{difficulty}</p>
         <Link
           to={`/instructions/${difficulty}`}
