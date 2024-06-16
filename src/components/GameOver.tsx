@@ -8,15 +8,16 @@ export default function GameOver({ time }: { time: number }) {
   };
 
   return (
-    <div className="absolute flex h-full w-full flex-col items-center justify-center bg-slate-800/90 text-white">
+    <div className="absolute flex h-full w-full flex-col items-center justify-center rounded-2xl bg-slate-800/90 text-white">
       <p className="mb-6 text-2xl">
-        Congratulations! You finished this game in {time} seconds.
+        Congratulations! You found the characters in {Math.floor(time / 60)}{" "}
+        minute(s) {time % 60} second(s).
       </p>
       <form
         onSubmit={(e) => formHandler(e)}
         className="mb-6 flex flex-col items-center"
       >
-        <label htmlFor="name" className="mb-2">
+        <label htmlFor="name" className="mb-2 text-lg">
           Add your name to the leaderboards:
         </label>
         <input type="hidden" name="score" value={time} />
