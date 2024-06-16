@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { TrophyIcon } from "@heroicons/react/24/solid";
 
 export default function Nav() {
   return (
@@ -10,8 +11,9 @@ export default function Nav() {
           </Link>
         </li>
         <li>
-          <Link to="/leaderboard">
+          <Link to="/leaderboard" className="flex items-center gap-2">
             <p>Leaderboard</p>
+            <TrophyIcon className="h-5 w-5" />
           </Link>
         </li>
       </ul>

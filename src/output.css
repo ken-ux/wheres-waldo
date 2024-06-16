@@ -642,10 +642,6 @@ a:hover {
   height: 1.25rem;
 }
 
-.h-10 {
-  height: 2.5rem;
-}
-
 .max-h-24 {
   max-height: 6rem;
 }
@@ -664,10 +660,6 @@ a:hover {
 
 .w-5 {
   width: 1.25rem;
-}
-
-.w-10 {
-  width: 2.5rem;
 }
 
 .max-w-screen-xl {
@@ -718,20 +710,16 @@ a:hover {
   border-radius: 0.25rem;
 }
 
+.rounded-2xl {
+  border-radius: 1rem;
+}
+
 .rounded-full {
   border-radius: 9999px;
 }
 
 .rounded-lg {
   border-radius: 0.5rem;
-}
-
-.rounded-xl {
-  border-radius: 0.75rem;
-}
-
-.rounded-2xl {
-  border-radius: 1rem;
 }
 
 .rounded-b-lg {
@@ -757,14 +745,6 @@ a:hover {
   border-width: 4px;
 }
 
-.border-8 {
-  border-width: 8px;
-}
-
-.border {
-  border-width: 1px;
-}
-
 .border-r-2 {
   border-right-width: 2px;
 }
@@ -784,11 +764,6 @@ a:hover {
 
 .border-teal-600\/50 {
   border-color: rgb(13 148 136 / 0.5);
-}
-
-.border-teal-600 {
-  --tw-border-opacity: 1;
-  border-color: rgb(13 148 136 / var(--tw-border-opacity));
 }
 
 .bg-red-200 {
@@ -957,10 +932,6 @@ a:hover {
 
 .outline-teal-600\/50 {
   outline-color: rgb(13 148 136 / 0.5);
-}
-
-.outline-teal-600 {
-  outline-color: #0d9488;
 }
 
 .transition {
