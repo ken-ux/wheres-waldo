@@ -60,14 +60,8 @@ export default function Game() {
   return (
     <div>
       <div className="mb-4 flex flex-wrap items-center justify-between gap-4">
-        <div className="flex flex-wrap items-center gap-4">
-          <h1 className="text-2xl">Find:</h1>
-          <div className="flex">
-            <GoalCardGroup
-              tooltipMode={false}
-              goalsCompleted={goalsCompleted}
-            />
-          </div>
+        <div className="flex w-full flex-col gap-4 md:flex-row">
+          <GoalCardGroup tooltipMode={false} goalsCompleted={goalsCompleted} />
         </div>
         <Timer gameOver={gameOver} setTime={setTime} />
       </div>

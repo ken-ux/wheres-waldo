@@ -29,7 +29,7 @@ export default function GoalCard({
       className={
         game_screen
           ? // Styling for game page
-            "test-border flex flex-1 items-center gap-2 bg-slate-50 " +
+            "flex flex-1 items-center rounded-lg border-2 border-teal-600/50 bg-white shadow-md " +
             (completed ? "text-lg" : "")
           : // Styling for instructions page
             "flex flex-1 flex-col rounded-lg text-center shadow-md outline outline-2 outline-teal-600/50"
@@ -39,14 +39,18 @@ export default function GoalCard({
         src={image}
         alt={title}
         className={
-          game_screen ? "h-24 w-24" : "aspect-square w-full rounded-t-lg"
+          game_screen
+            ? // Styling for game page
+              "aspect-square max-h-24 rounded-l-lg border-r-2 border-teal-600/50"
+            : // Styling for instructions page
+              "aspect-square w-full rounded-t-lg"
         }
       />
       <p
         className={
           game_screen
             ? // Styling for game page
-              ""
+              "flex h-full w-full items-center justify-center text-center"
             : // Styling for instructions page
               "flex h-full items-center justify-center rounded-b-lg border-t-2 border-teal-600/50 bg-white p-4 font-medium"
         }
