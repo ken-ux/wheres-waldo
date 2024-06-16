@@ -11,7 +11,7 @@ export default function Instructions() {
         You need to find these{" "}
         <span className="text-teal-600">three characters</span>:
       </h1>
-      <div className="flex w-full flex-col gap-2 sm:flex-row">
+      <div className="flex w-full flex-col gap-4 sm:flex-row">
         <GoalCardGroup tooltipMode={false} />
       </div>
       <Link
