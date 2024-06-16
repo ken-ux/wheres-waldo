@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react";
+import { ClockIcon } from "@heroicons/react/24/solid";
+
 export default function Timer({
   gameOver,
   setTime,
@@ -20,8 +22,14 @@ export default function Timer({
   }, [gameOver, count, setTime]);
 
   return (
-    <div>
-      <h1 className="text-2xl">Timer: 00:00:00 {count}</h1>
+    <div className="flex items-center justify-center gap-2 rounded-lg bg-teal-600 p-4 text-white">
+      <ClockIcon className="h-8 w-8" />
+      <h1 className="text-2xl">
+        {(count / 60) % 60 > 1
+          ? (count / 60 > 10 ? "" : "0") + (Math.floor(count / 60) % 60)
+          : "00"}
+        :{count % 60 > 9 ? count % 60 : "0" + (count % 60)}
+      </h1>
     </div>
   );
 }

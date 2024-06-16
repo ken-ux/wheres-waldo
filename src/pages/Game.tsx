@@ -59,7 +59,7 @@ export default function Game() {
 
   return (
     <div>
-      <div className="mb-4 flex flex-col gap-4">
+      <div className="mb-6 flex flex-col justify-center gap-6 sm:flex-row">
         <div className="flex w-full flex-col gap-4 md:flex-row">
           <GoalCardGroup tooltipMode={false} goalsCompleted={goalsCompleted} />
         </div>
@@ -72,7 +72,7 @@ export default function Game() {
             src={img_source}
             alt="game screen"
             onClick={clickHandler}
-            className="w-full max-w-screen-xl"
+            className="w-full max-w-screen-xl rounded-2xl border-2 border-teal-600/50"
           />
           {gameOver && <GameOver time={time} />}
         </div>
