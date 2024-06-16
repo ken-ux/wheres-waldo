@@ -22,7 +22,7 @@ export default function GameCard({
   }
 
   return (
-    <div className="flex w-full flex-1 flex-col items-center rounded-lg border-2 border-teal-600/50 shadow-lg transition duration-300 hover:scale-[1.01] hover:shadow-xl">
+    <div className="flex w-full flex-1 flex-col items-center rounded-lg border-2 border-teal-600/50 shadow-md transition duration-300 hover:scale-[1.01] hover:shadow-xl">
       <img
         src={img_src}
         alt={`${difficulty} game mode`}
