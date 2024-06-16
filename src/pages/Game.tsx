@@ -59,7 +59,7 @@ export default function Game() {
 
   return (
     <div>
-      <div className="mb-4 flex flex-wrap items-center justify-between gap-4">
+      <div className="mb-4 flex flex-col gap-4">
         <div className="flex w-full flex-col gap-4 md:flex-row">
           <GoalCardGroup tooltipMode={false} goalsCompleted={goalsCompleted} />
         </div>
