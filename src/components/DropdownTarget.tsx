@@ -44,15 +44,18 @@ export default function DropdownTarget({
   }
 
   return (
-    <div
-      className={
-        "test-border flex items-center " +
-        (disabled ? "bg-red-200" : "bg-slate-100 hover:bg-slate-500")
-      }
-      onClick={disabled ? undefined : clickHandler}
-    >
-      <img src={image} alt={title} className="h-16 w-16" />
-      <p className="p-4">{title}</p>
-    </div>
+    !disabled && (
+      <div
+        className={"flex items-center bg-white hover:bg-slate-500"}
+        onClick={clickHandler}
+      >
+        <img
+          src={image}
+          alt={title}
+          className="h-16 w-16 border-r-2 border-r-teal-600"
+        />
+        <p className="p-4">{title}</p>
+      </div>
+    )
   );
 }

@@ -34,13 +34,15 @@ export default function Tooltip({
         className="rounded-full border-4 border-dashed border-slate-500 bg-slate-500/40"
         style={{ height: cursorSize, width: cursorSize }}
       />
-      <GoalCardGroup
-        tooltipMode={true}
-        setTooltipOpen={setTooltipOpen}
-        goalsCompleted={goalsCompleted}
-        setGoalsCompleted={setGoalsCompleted}
-        setGameOver={setGameOver}
-      />
+      <div className="divide-y-2 divide-teal-600 border-2 border-teal-600">
+        <GoalCardGroup
+          tooltipMode={true}
+          setTooltipOpen={setTooltipOpen}
+          goalsCompleted={goalsCompleted}
+          setGoalsCompleted={setGoalsCompleted}
+          setGameOver={setGameOver}
+        />
+      </div>
     </div>
   );
 }
