@@ -51,7 +51,7 @@ export default function GoalCardGroup({
       img_src_1 = hard_goal_1;
       img_src_2 = hard_goal_2;
       img_src_3 = hard_goal_3;
-      title_1 = "Cowbody on Horse";
+      title_1 = "Cowboy on Horse";
       title_2 = "Waldo";
       title_3 = "Man with Camera";
   }
