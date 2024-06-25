@@ -1,10 +1,40 @@
-import { useParams } from "react-router-dom";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 export default function GameOver({ time }: { time: number }) {
   const { difficulty } = useParams();
-  const formHandler = (e: React.FormEvent<HTMLFormElement>) => {
+
+  const formHandler = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log(e);
+
+    // Extend typing to prevent errors when accessing values.
+    const elements = e.currentTarget.elements as HTMLFormControlsCollection & {
+      difficulty: HTMLInputElement;
+      name: HTMLInputElement;
+      score: HTMLInputElement;
+    };
+
+    // Get values and store in object.
+    const formData = {
+      difficulty: elements["difficulty"].value,
+      name: elements["name"].value,
+      score: Number(elements["score"].value),
+    };
+
+    // Send POST request to backend.
+    try {
+      const url = import.meta.env.VITE_SERVER + "/leaderboards";
+      const response = await fetch(url, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+      console.log("Response:", result);
+    } catch (error) {
+      console.error("Error:", error);
+    }
   };
 
   return (
@@ -24,10 +54,12 @@ export default function GameOver({ time }: { time: number }) {
         <input type="hidden" name="difficulty" value={difficulty} />
         <div className="flex items-center gap-2">
           <input
+            id="name"
             type="text"
             name="name"
             required
             className="rounded px-2 py-1 text-black"
+            autoComplete="given-name"
           />
           <button type="submit" className="rounded bg-teal-600 px-3 py-1">
             Submit
