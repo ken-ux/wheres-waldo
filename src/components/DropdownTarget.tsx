@@ -6,6 +6,7 @@ export default function DropdownTarget({
   goalsCompleted,
   setGoalsCompleted,
   setGameOver,
+  position,
 }: {
   id: 1 | 2 | 3;
   image: string | undefined;
@@ -18,10 +19,14 @@ export default function DropdownTarget({
       >
     | undefined;
   setGameOver: React.Dispatch<React.SetStateAction<boolean>> | undefined;
+  position: { x: number; y: number } | undefined;
 }) {
   let disabled = false;
 
   const clickHandler = () => {
+    console.log(title);
+    console.log(position?.x, position?.y);
+
     if (setTooltipOpen) {
       setTooltipOpen(false);
     }

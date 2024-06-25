@@ -41,6 +41,7 @@ export default function Tooltip({
           goalsCompleted={goalsCompleted}
           setGoalsCompleted={setGoalsCompleted}
           setGameOver={setGameOver}
+          position={position}
         />
       </div>
     </div>

@@ -1,15 +1,15 @@
 import { useParams } from "react-router-dom";
-import GoalCard from "./GoalCard";
-import DropdownTarget from "./DropdownTarget";
 import easy_goal_1 from "../assets/easy_goal_1.png";
 import easy_goal_2 from "../assets/easy_goal_2.png";
 import easy_goal_3 from "../assets/easy_goal_3.png";
-import medium_goal_1 from "../assets/medium_goal_1.png";
-import medium_goal_2 from "../assets/medium_goal_2.png";
-import medium_goal_3 from "../assets/medium_goal_3.png";
 import hard_goal_1 from "../assets/hard_goal_1.png";
 import hard_goal_2 from "../assets/hard_goal_2.png";
 import hard_goal_3 from "../assets/hard_goal_3.png";
+import medium_goal_1 from "../assets/medium_goal_1.png";
+import medium_goal_2 from "../assets/medium_goal_2.png";
+import medium_goal_3 from "../assets/medium_goal_3.png";
+import DropdownTarget from "./DropdownTarget";
+import GoalCard from "./GoalCard";
 
 export default function GoalCardGroup({
   tooltipMode,
@@ -17,6 +17,7 @@ export default function GoalCardGroup({
   goalsCompleted,
   setGoalsCompleted,
   setGameOver,
+  position,
 }: {
   tooltipMode: boolean;
   setTooltipOpen?: React.Dispatch<React.SetStateAction<boolean>>;
@@ -25,6 +26,7 @@ export default function GoalCardGroup({
     React.SetStateAction<{ 1: boolean; 2: boolean; 3: boolean }>
   >;
   setGameOver?: React.Dispatch<React.SetStateAction<boolean>>;
+  position?: { x: number; y: number };
 }) {
   const { difficulty } = useParams();
   let img_src_1, img_src_2, img_src_3;
@@ -86,6 +88,7 @@ export default function GoalCardGroup({
         goalsCompleted={goalsCompleted}
         setGoalsCompleted={setGoalsCompleted}
         setGameOver={setGameOver}
+        position={position}
       />
       <DropdownTarget
         id={2}
@@ -95,6 +98,7 @@ export default function GoalCardGroup({
         goalsCompleted={goalsCompleted}
         setGoalsCompleted={setGoalsCompleted}
         setGameOver={setGameOver}
+        position={position}
       />
       <DropdownTarget
         id={3}
@@ -104,6 +108,7 @@ export default function GoalCardGroup({
         goalsCompleted={goalsCompleted}
         setGoalsCompleted={setGoalsCompleted}
         setGameOver={setGameOver}
+        position={position}
       />
     </>
   );
