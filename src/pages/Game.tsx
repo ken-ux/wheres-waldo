@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { useParams } from "react-router-dom";
-import Tooltip from "../components/Tooltip";
-import GoalCardGroup from "../components/GoalCardGroup";
-import Timer from "../components/Timer";
-import GameOver from "../components/GameOver";
+import waldo_hard from "../assets/waldo_beach.jpg";
 import waldo_easy from "../assets/waldo_city.jpeg";
 import waldo_medium from "../assets/waldo_winter.jpeg";
-import waldo_hard from "../assets/waldo_beach.jpg";
+import GameOver from "../components/GameOver";
+import GoalCardGroup from "../components/GoalCardGroup";
+import Timer from "../components/Timer";
+import Tooltip from "../components/Tooltip";
 
 export default function Game() {
   const [goalsCompleted, setGoalsCompleted] = useState({
@@ -15,6 +15,7 @@ export default function Game() {
     3: false,
   });
   const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [offsetPosition, setOffsetPosition] = useState({ x: 0, y: 0 });
   const [imageRatio, setImageRatio] = useState(1.0);
   const [tooltipOpen, setTooltipOpen] = useState(false);
   const [gameOver, setGameOver] = useState(false);
@@ -38,21 +39,23 @@ export default function Game() {
   const clickHandler = (e: React.MouseEvent<HTMLImageElement, MouseEvent>) => {
     // If image is resized smaller, check the current image size. Divide by the max-width
     // of the website (1280px) to get a ratio that we can convert the coordinates by.
-    const image: HTMLImageElement | null =
-      document.querySelector("#game_screen");
-    if (image !== null) {
-      setImageRatio(1280 / image.width);
-    }
+    // const image = document.querySelector("#game_screen") as HTMLImageElement;
+    const imageWidth = e.currentTarget.width;
+    const ratio = 1280 / imageWidth;
+
+    // The ratio above is immediately available on render. If I were to reference the imageRatio state only,
+    // then the ratio for the first click will always be 1.0. I'm setting it here purely to manipulate cursor size
+    // in the tooltip.
+    setImageRatio(1280 / imageWidth);
 
     // The dimensions of the click event are the same at any screen size after multiplying by the ratio.
-    const dimensions = {
-      x: e.nativeEvent.offsetX * imageRatio,
-      y: e.nativeEvent.offsetY * imageRatio,
-    };
+    setPosition({
+      x: e.nativeEvent.offsetX * ratio,
+      y: e.nativeEvent.offsetY * ratio,
+    });
 
     // Record the cursor position so that the tooltip is rendered in the correct place.
-    setPosition({ x: e.nativeEvent.offsetX, y: e.nativeEvent.offsetY });
-    console.log(dimensions.x, dimensions.y);
+    setOffsetPosition({ x: e.nativeEvent.offsetX, y: e.nativeEvent.offsetY });
 
     setTooltipOpen(!tooltipOpen);
   };
@@ -80,6 +83,7 @@ export default function Game() {
         {tooltipOpen && (
           <Tooltip
             position={position}
+            offsetPosition={offsetPosition}
             cursorRatio={imageRatio}
             setTooltipOpen={setTooltipOpen}
             goalsCompleted={goalsCompleted}
