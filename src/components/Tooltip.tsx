@@ -2,6 +2,7 @@ import GoalCardGroup from "./GoalCardGroup";
 
 export default function Tooltip({
   position,
+  offsetPosition,
   cursorRatio,
   setTooltipOpen,
   goalsCompleted,
@@ -9,6 +10,7 @@ export default function Tooltip({
   setGameOver,
 }: {
   position: { x: number; y: number };
+  offsetPosition: { x: number; y: number };
   cursorRatio: number;
   setTooltipOpen: React.Dispatch<React.SetStateAction<boolean>>;
   goalsCompleted: { 1: boolean; 2: boolean; 3: boolean };
@@ -22,8 +24,8 @@ export default function Tooltip({
 
   // Recalculate the cursor positions so that the tooltip is rendered in the center
   //  of the mouse click instead of to the top left.
-  const centeredPositionX = position.x - cursorSize / 2;
-  const centeredPositionY = position.y - cursorSize / 2;
+  const centeredPositionX = offsetPosition.x - cursorSize / 2;
+  const centeredPositionY = offsetPosition.y - cursorSize / 2;
 
   return (
     <div
