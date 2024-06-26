@@ -1,7 +1,11 @@
 import { useEffect, useState } from "react";
+import { Leaderboard as LeaderboardType } from "../types";
 
 export default function Leaderboard() {
-  const [leaderboards, setLeaderboards] = useState([{}, {}, {}]);
+  const [leaderboards, setLeaderboards]: [
+    LeaderboardType[],
+    React.Dispatch<React.SetStateAction<LeaderboardType[]>>,
+  ] = useState([[{ name: "", score: 0 }]]);
   const [dataFetched, setDataFetched] = useState(false);
   const difficulties = ["easy", "medium", "hard"];
 
@@ -27,7 +31,7 @@ export default function Leaderboard() {
   }, []);
 
   let tables;
-  
+
   if (dataFetched) {
     tables = leaderboards.map((leaderboard, index) => (
       <div key={difficulties[index]}>
@@ -41,20 +45,19 @@ export default function Leaderboard() {
             </tr>
           </thead>
           <tbody>
-            <tr className="*:test-border">
-              <td>1</td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr className="*:test-border">
-              <td>2</td>
-              <td></td>
-              <td></td>
-            </tr>
+            {leaderboard.map((score, index) => (
+              <tr key={index} className="*:test-border">
+                <td>{index + 1}</td>
+                <td>{score.name}</td>
+                <td>{score.score}</td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </div>
     ));
+  } else {
+    tables = "Data loading...";
   }
 
   return (
