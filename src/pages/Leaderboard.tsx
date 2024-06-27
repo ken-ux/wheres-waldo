@@ -42,7 +42,7 @@ export default function Leaderboard() {
             <tr>
               <th className="rounded-tl-lg bg-teal-600">Rank</th>
               <th className="border-x border-white bg-teal-600">Name</th>
-              <th className="rounded-tr-lg bg-teal-600">Time (seconds)</th>
+              <th className="rounded-tr-lg bg-teal-600">Time</th>
             </tr>
           </thead>
           <tbody className="bg-white">
@@ -50,7 +50,16 @@ export default function Leaderboard() {
               <tr key={index}>
                 <td className="border border-teal-600">{index + 1}</td>
                 <td className="border border-teal-600">{score.name}</td>
-                <td className="border border-teal-600">{score.score}</td>
+                <td className="border border-teal-600">
+                  {(score.score / 60) % 60 > 1
+                    ? Math.floor(score.score / 60) % 60
+                    : "0"}
+                  m{" "}
+                  {score.score % 60 > 9
+                    ? score.score % 60
+                    : "0" + (score.score % 60)}
+                  s
+                </td>
               </tr>
             ))}
           </tbody>
