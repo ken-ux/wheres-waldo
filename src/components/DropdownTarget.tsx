@@ -32,8 +32,6 @@ export default function DropdownTarget({
       `${import.meta.env.VITE_SERVER}/goal?difficulty=${difficulty}&desc=${title}`,
     );
     const data = await response.json();
-    console.log(data);
-    console.log(position?.x, position?.y);
 
     if (setTooltipOpen) {
       setTooltipOpen(false);
