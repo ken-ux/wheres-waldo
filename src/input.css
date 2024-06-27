@@ -22,6 +22,14 @@
     @apply px-2;
     @apply py-1;
   }
+
+  tbody > tr:last-child > td:first-child {
+    @apply rounded-bl-lg;
+  }
+
+  tbody > tr:last-child > td:last-child {
+    @apply rounded-br-lg;
+  }
 }
 
 @layer components {
