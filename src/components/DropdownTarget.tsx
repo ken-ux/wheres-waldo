@@ -64,13 +64,13 @@ export default function DropdownTarget({
   return (
     !disabled && (
       <div
-        className={"hover:bg-slate-boundary0 flex items-center bg-white"}
+        className={"flex items-center bg-white hover:bg-slate-500"}
         onClick={clickHandler}
       >
         <img
           src={image}
           alt={title}
-          className="h-16 w-16 border-r-2 border-r-teal-600"
+          className="w-1/4 border-r-2 border-r-teal-600"
         />
         <p className="p-4">{title}</p>
       </div>
