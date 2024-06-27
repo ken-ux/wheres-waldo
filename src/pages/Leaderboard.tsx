@@ -22,7 +22,6 @@ export default function Leaderboard() {
           return response.json();
         }),
       );
-      console.log("effect called");
       setLeaderboards(data);
       setDataFetched(true);
     }
@@ -34,22 +33,24 @@ export default function Leaderboard() {
 
   if (dataFetched) {
     tables = leaderboards.map((leaderboard, index) => (
-      <div key={difficulties[index]}>
-        <h2 className="capitalize">{difficulties[index]}</h2>
-        <table className="test-border m-auto">
-          <thead className="*:test-border">
+      <div key={difficulties[index]} className="flex-1">
+        <h2 className="py-4 text-xl font-semibold capitalize md:text-2xl">
+          {difficulties[index]}
+        </h2>
+        <table className="m-auto min-w-72">
+          <thead className="text-white">
             <tr>
-              <th>Rank</th>
-              <th>Name</th>
-              <th>Time (seconds)</th>
+              <th className="rounded-tl-lg bg-teal-600">Rank</th>
+              <th className="border-x border-white bg-teal-600">Name</th>
+              <th className="rounded-tr-lg bg-teal-600">Time (seconds)</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody className="bg-white">
             {leaderboard.map((score, index) => (
-              <tr key={index} className="*:test-border">
-                <td>{index + 1}</td>
-                <td>{score.name}</td>
-                <td>{score.score}</td>
+              <tr key={index}>
+                <td className="border border-teal-600">{index + 1}</td>
+                <td className="border border-teal-600">{score.name}</td>
+                <td className="border border-teal-600">{score.score}</td>
               </tr>
             ))}
           </tbody>
@@ -57,13 +58,13 @@ export default function Leaderboard() {
       </div>
     ));
   } else {
-    tables = "Data loading...";
+    tables = <p>Data loading...</p>;
   }
 
   return (
-    <div className="test-border w-full max-w-screen-xl text-center">
-      <h1 className="text-3xl">Leaderboard</h1>
-      {tables}
+    <div className="w-full max-w-screen-xl text-center">
+      <h1 className="py-4 text-2xl font-semibold md:text-3xl">Leaderboard</h1>
+      <div className="flex flex-wrap justify-evenly">{tables}</div>
     </div>
   );
 }
