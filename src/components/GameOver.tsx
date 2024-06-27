@@ -8,6 +8,8 @@ export default function GameOver({ time }: { time: number }) {
 
   const formHandler = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    // Disable submit button while processing request.
     setIsDisabled(true);
 
     // Extend typing to prevent errors when accessing values.
@@ -39,6 +41,7 @@ export default function GameOver({ time }: { time: number }) {
         setIsSubmitted(true);
       }
     } catch (error) {
+      // Enable submit again.
       setIsDisabled(false);
       console.error("Error:", error);
     }
@@ -72,7 +75,7 @@ export default function GameOver({ time }: { time: number }) {
             />
             <button
               type="submit"
-              className="rounded bg-teal-600 px-3 py-1 disabled:bg-gray-500"
+              className="rounded bg-teal-600 px-3 py-1 disabled:bg-slate-500 disabled:text-slate-400"
               disabled={isDisabled}
             >
               Submit
