@@ -37,7 +37,7 @@ export default function Leaderboard() {
         <h2 className="py-4 text-xl font-semibold capitalize md:text-2xl">
           {difficulties[index]}
         </h2>
-        <table className="m-auto min-w-72">
+        <table className="m-auto min-w-72 shadow-md">
           <thead className="text-white">
             <tr>
               <th className="rounded-tl-lg bg-teal-600">Rank</th>
