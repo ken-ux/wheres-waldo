@@ -34,23 +34,23 @@ export default function Leaderboard() {
   if (dataFetched) {
     tables = leaderboards.map((leaderboard, index) => (
       <div key={difficulties[index]} className="flex-1">
-        <h2 className="py-4 text-xl font-semibold capitalize md:text-2xl">
+        <h2 className="py-4 text-xl font-semibold capitalize text-teal-600 md:text-2xl">
           {difficulties[index]}
         </h2>
-        <table className="m-auto min-w-72 shadow-md">
+        <table className="m-auto min-w-72 rounded-lg shadow-md">
           <thead className="text-white">
             <tr>
               <th className="rounded-tl-lg bg-teal-600">Rank</th>
-              <th className="border-x border-white bg-teal-600">Name</th>
+              <th className="bg-teal-600">Name</th>
               <th className="rounded-tr-lg bg-teal-600">Time</th>
             </tr>
           </thead>
           <tbody className="bg-white">
             {leaderboard.map((score, index) => (
               <tr key={index}>
-                <td className="border border-teal-600">{index + 1}</td>
-                <td className="border border-teal-600">{score.name}</td>
-                <td className="border border-teal-600">
+                <td>{index + 1}</td>
+                <td>{score.name}</td>
+                <td>
                   {(score.score / 60) % 60 > 1
                     ? Math.floor(score.score / 60) % 60
                     : "0"}
