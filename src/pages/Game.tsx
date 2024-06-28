@@ -69,7 +69,18 @@ export default function Game() {
         </div>
         <Timer gameOver={gameOver} setTime={setTime} />
       </div>
-      <div>
+      <div
+        className={
+          "mb-6 rounded-lg text-white " +
+          (message === "Correct!"
+            ? "bg-green-600 p-4"
+            : message === "Nope. They weren't there, try again."
+              ? "bg-red-600 p-4"
+              : message !== ""
+                ? "bg-teal-600 p-4"
+                : "")
+        }
+      >
         <p>{message}</p>
       </div>
       <div className="relative">
