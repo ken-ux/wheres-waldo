@@ -14,6 +14,7 @@ export default function Game() {
     2: false,
     3: false,
   });
+  const [message, setMessage] = useState("");
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [offsetPosition, setOffsetPosition] = useState({ x: 0, y: 0 });
   const [imageRatio, setImageRatio] = useState(1.0);
@@ -64,9 +65,12 @@ export default function Game() {
     <div>
       <div className="mb-6 flex flex-col justify-center gap-6 sm:flex-row">
         <div className="flex w-full flex-col gap-4 md:flex-row">
-          <GoalCardGroup tooltipMode={false} goalsCompleted={goalsCompleted} />
+          <GoalCardGroup goalsCompleted={goalsCompleted} />
         </div>
         <Timer gameOver={gameOver} setTime={setTime} />
+      </div>
+      <div>
+        <p>{message}</p>
       </div>
       <div className="relative">
         <div className="flex items-center justify-center">
@@ -89,6 +93,7 @@ export default function Game() {
             goalsCompleted={goalsCompleted}
             setGoalsCompleted={setGoalsCompleted}
             setGameOver={setGameOver}
+            setMessage={setMessage}
           />
         )}
       </div>

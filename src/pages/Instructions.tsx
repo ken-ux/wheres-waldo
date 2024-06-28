@@ -1,5 +1,4 @@
-import { Link } from "react-router-dom";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import GoalCardGroup from "../components/GoalCardGroup";
 
 export default function Instructions() {
@@ -12,7 +11,7 @@ export default function Instructions() {
         <span className="text-teal-600">three characters</span>:
       </h1>
       <div className="flex w-full flex-col gap-4 sm:flex-row">
-        <GoalCardGroup tooltipMode={false} />
+        <GoalCardGroup />
       </div>
       <Link
         to={`/game/${difficulty}`}

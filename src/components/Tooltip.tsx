@@ -1,4 +1,4 @@
-import GoalCardGroup from "./GoalCardGroup";
+import DropdownTargetGroup from "./DropdownTargetGroup";
 
 export default function Tooltip({
   position,
@@ -8,6 +8,7 @@ export default function Tooltip({
   goalsCompleted,
   setGoalsCompleted,
   setGameOver,
+  setMessage,
 }: {
   position: { x: number; y: number };
   offsetPosition: { x: number; y: number };
@@ -18,6 +19,7 @@ export default function Tooltip({
     React.SetStateAction<{ 1: boolean; 2: boolean; 3: boolean }>
   >;
   setGameOver: React.Dispatch<React.SetStateAction<boolean>>;
+  setMessage: React.Dispatch<React.SetStateAction<string>>;
 }) {
   // Scale the cursor size with the image.
   const cursorSize = 50 / cursorRatio;
@@ -37,13 +39,13 @@ export default function Tooltip({
         style={{ height: cursorSize, width: cursorSize }}
       />
       <div className="divide-y-2 divide-teal-600 border-2 border-teal-600">
-        <GoalCardGroup
-          tooltipMode={true}
+        <DropdownTargetGroup
           setTooltipOpen={setTooltipOpen}
           goalsCompleted={goalsCompleted}
           setGoalsCompleted={setGoalsCompleted}
           setGameOver={setGameOver}
           position={position}
+          setMessage={setMessage}
         />
       </div>
     </div>

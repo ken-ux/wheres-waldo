@@ -8,12 +8,24 @@ import hard_goal_3 from "../assets/hard_goal_3.png";
 import medium_goal_1 from "../assets/medium_goal_1.png";
 import medium_goal_2 from "../assets/medium_goal_2.png";
 import medium_goal_3 from "../assets/medium_goal_3.png";
-import GoalCard from "./GoalCard";
+import DropdownTarget from "./DropdownTarget";
 
-export default function GoalCardGroup({
+export default function DropdownTargetGroup({
+  setTooltipOpen,
   goalsCompleted,
+  setGoalsCompleted,
+  setGameOver,
+  position,
+  setMessage,
 }: {
-  goalsCompleted?: { 1: boolean; 2: boolean; 3: boolean };
+  setTooltipOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  goalsCompleted: { 1: boolean; 2: boolean; 3: boolean };
+  setGoalsCompleted: React.Dispatch<
+    React.SetStateAction<{ 1: boolean; 2: boolean; 3: boolean }>
+  >;
+  setGameOver: React.Dispatch<React.SetStateAction<boolean>>;
+  position: { x: number; y: number };
+  setMessage: React.Dispatch<React.SetStateAction<string>>;
 }) {
   const { difficulty } = useParams();
   let img_src_1, img_src_2, img_src_3;
@@ -44,25 +56,41 @@ export default function GoalCardGroup({
       title_2 = "Waldo";
       title_3 = "Man with Camera";
   }
+
   return (
     <>
-      <GoalCard
+      <DropdownTarget
         id={1}
-        goalsCompleted={goalsCompleted}
         image={img_src_1}
         title={title_1}
-      />
-      <GoalCard
-        id={2}
+        setTooltipOpen={setTooltipOpen}
         goalsCompleted={goalsCompleted}
+        setGoalsCompleted={setGoalsCompleted}
+        setGameOver={setGameOver}
+        position={position}
+        setMessage={setMessage}
+      />
+      <DropdownTarget
+        id={2}
         image={img_src_2}
         title={title_2}
-      />
-      <GoalCard
-        id={3}
+        setTooltipOpen={setTooltipOpen}
         goalsCompleted={goalsCompleted}
+        setGoalsCompleted={setGoalsCompleted}
+        setGameOver={setGameOver}
+        position={position}
+        setMessage={setMessage}
+      />
+      <DropdownTarget
+        id={3}
         image={img_src_3}
         title={title_3}
+        setTooltipOpen={setTooltipOpen}
+        goalsCompleted={goalsCompleted}
+        setGoalsCompleted={setGoalsCompleted}
+        setGameOver={setGameOver}
+        position={position}
+        setMessage={setMessage}
       />
     </>
   );

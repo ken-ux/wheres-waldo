@@ -9,53 +9,55 @@ export default function DropdownTarget({
   setGoalsCompleted,
   setGameOver,
   position,
+  setMessage,
 }: {
   id: 1 | 2 | 3;
   image: string | undefined;
   title: string | undefined;
-  setTooltipOpen: React.Dispatch<React.SetStateAction<boolean>> | undefined;
-  goalsCompleted: { 1: boolean; 2: boolean; 3: boolean } | undefined;
-  setGoalsCompleted:
-    | React.Dispatch<
-        React.SetStateAction<{ 1: boolean; 2: boolean; 3: boolean }>
-      >
-    | undefined;
-  setGameOver: React.Dispatch<React.SetStateAction<boolean>> | undefined;
-  position: { x: number; y: number } | undefined;
+  setTooltipOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  goalsCompleted: { 1: boolean; 2: boolean; 3: boolean };
+  setGoalsCompleted: React.Dispatch<
+    React.SetStateAction<{ 1: boolean; 2: boolean; 3: boolean }>
+  >;
+  setGameOver: React.Dispatch<React.SetStateAction<boolean>>;
+  position: { x: number; y: number };
+  setMessage: React.Dispatch<React.SetStateAction<string>>;
 }) {
   const { difficulty } = useParams();
   let disabled = false;
 
   const clickHandler = async () => {
     const boundary = 50;
+    setMessage("Checking your guess...");
+
     const response = await fetch(
       `${import.meta.env.VITE_SERVER}/goal?difficulty=${difficulty}&desc=${title}`,
     );
     const data = await response.json();
 
-    if (setTooltipOpen) {
-      setTooltipOpen(false);
+    setTooltipOpen(false);
+
+    // Check if click was close enough to the answer.
+    if (
+      position.x < data.pos_x + boundary &&
+      position.x > data.pos_x - boundary &&
+      position.y < data.pos_y + boundary &&
+      position.y > data.pos_y - boundary
+    ) {
+      const newGoalsCompleted = goalsCompleted;
+      newGoalsCompleted[id] = true;
+      setGoalsCompleted(newGoalsCompleted);
+      setMessage("Correct!");
+    } else {
+      setMessage("Nope. They weren't there, try again.");
     }
 
-    if (goalsCompleted && setGoalsCompleted && setGameOver && position) {
-      // Check if click was close enough to the answer.
-      if (
-        position.x < data.pos_x + boundary &&
-        position.x > data.pos_x - boundary &&
-        position.y < data.pos_y + boundary &&
-        position.y > data.pos_y - boundary
-      ) {
-        const newGoalsCompleted = goalsCompleted;
-        newGoalsCompleted[id] = true;
-        setGoalsCompleted(newGoalsCompleted);
-      }
-      if (goalsCompleted[1] && goalsCompleted[2] && goalsCompleted[3]) {
-        setGameOver(true);
-      }
+    if (goalsCompleted[1] && goalsCompleted[2] && goalsCompleted[3]) {
+      setGameOver(true);
     }
   };
 
-  if (goalsCompleted && goalsCompleted[id] === true) {
+  if (goalsCompleted[id] === true) {
     disabled = true;
   }
 
