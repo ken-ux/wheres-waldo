@@ -780,10 +780,6 @@ tbody > tr:last-child > td:last-child {
   border-width: 4px;
 }
 
-.border {
-  border-width: 1px;
-}
-
 .border-r-2 {
   border-right-width: 2px;
 }
