@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react";
 import { ClockIcon } from "@heroicons/react/24/solid";
+import { useEffect, useState } from "react";
 
 export default function Timer({
   gameOver,

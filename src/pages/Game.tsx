@@ -63,8 +63,8 @@ export default function Game() {
 
   return (
     <div>
-      <div className="mb-6 flex flex-col justify-center gap-6 sm:flex-row">
-        <div className="flex w-full flex-col gap-4 md:flex-row">
+      <div className="mb-6 grid gap-6 sm:flex-row md:grid-cols-8">
+        <div className="flex w-full flex-col gap-4 md:col-span-7 md:flex-row">
           <GoalCardGroup goalsCompleted={goalsCompleted} />
         </div>
         <Timer gameOver={gameOver} setTime={setTime} />
